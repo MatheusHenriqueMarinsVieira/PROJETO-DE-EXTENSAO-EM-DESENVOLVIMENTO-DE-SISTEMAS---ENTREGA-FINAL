@@ -1,0 +1,312 @@
+html, body {
+  background-color: #fff4e5;
+  font-family:Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #4b2e16;
+}
+
+/* Cabeçalho */
+header {
+  background-color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  font-size: 23px;
+}
+
+header .logo img {
+  height: 70px;
+
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  padding: 0;
+  font-size: 23px;
+  color: white;
+}
+
+header nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+  font-size: 23px;
+}
+
+header nav a:hover {
+  color: #FF5B00;
+  text-decoration: none;
+}
+
+header .login-links {
+  font-weight: 600;
+  color: #FFB347;
+}
+
+header .login-links a {
+  color: #FFB347;
+  text-decoration: none;
+}
+
+header .login-links a:hover {
+  color: #FF5B00;
+  text-decoration: none;
+}
+
+
+header .heart {
+  margin-left: 10px;
+}
+
+/* Página de Favoritos */
+/* ===== FAVORITOS ===== */
+
+#favoritos-lista {
+  text-align: center;
+  margin: 40px auto;
+  max-width: 900px;
+}
+
+.favoritos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.favorito-item {
+  background-color: #fff9f0;
+  border: 2px solid #ffe0b2;
+  border-radius: 15px;
+  width: 220px;
+  padding: 15px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.favorito-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.favorito-item img {
+  width: 180px;       /* tamanho fixo */
+  height: 180px;      /* mantém formato quadrado */
+  object-fit: cover;  /* evita distorção */
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.favorito-item h3 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #5c2e00;
+}
+
+.favorito-item p {
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.btn-remover {
+  background-color: #ff7b00;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-remover:hover {
+  background-color: #e66a00;
+}
+
+/* Seção de página vazia */
+.hidden {
+  display: none;
+}
+
+/* ===== Botão "Continuar Favoritando" ===== */
+
+.continuar-btn {
+  display: inline-block;
+  background-color: #ff7b00;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-top: 25px;
+}
+
+.continuar-btn:hover {
+  background-color: #e66a00;
+}
+
+/* ====== Estilo da lista de favoritos vazia ====== */
+.favoritos-vazio {
+  text-align: center;
+  padding: 60px 20px;
+  color: #4b2e0e;
+}
+
+.icone-vazio {
+  font-size: 80px;
+  color: #ff7b00;
+  margin-bottom: 20px;
+}
+
+.favoritos-vazio h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.favoritos-vazio p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+/* Botão igual ao remover */
+.continuar-btn {
+  display: inline-block;
+  background-color: #ff7b00;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.continuar-btn:hover {
+  background-color: #e66a00;
+}
+
+
+
+/* Rodapé */
+footer {
+  position: relative;
+  top: 55px;
+  background-color: #000;
+  text-align: center;
+  border-top: 2px solid #191919;
+  margin: 0;
+  padding: 10px 0;
+}
+
+footer .footer-nav {
+  margin-bottom: 20px;
+  position: relative;
+  top: 150px;
+  font-size: 30px;
+  color: white;
+}
+
+footer nav a:hover {
+  color: #FF5B00;
+  text-decoration: none;
+}
+
+footer .footer-nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 8px;
+  font-weight: 600;
+  position: relative;
+  font-size: 30px;
+}
+
+footer .footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.footer-logo p {
+  color: #FFB347;
+  font-weight: 700;
+  margin-top: 8px;
+  position: relative;
+  top: -240px;
+  left: -300px;
+}
+
+.footer-social p {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.footer-content img {
+  width: 240px;
+  margin: 0 5px;
+  position: relative;
+  left: -300px;
+  top: 20px;
+}
+
+.footer-social img {
+  width: 240px;
+  position: relative;
+  left: 300px;
+  top: -20px;
+}
+
+.footer-copy {
+  font-size: 0.8rem;
+  color: #aaa;
+  margin-top: 20px;
+  position: relative;
+
+}
+
+/* Ícone de favoritos no cabeçalho */
+.auth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.auth a {
+  color: #ff7b00;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.auth a:hover {
+  color: #ff6200;
+}
+
+.favoritos-link {
+  position: relative;
+  font-size: 20px;
+}
+
+#favoritos-count {
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  background-color: #ff7b00;
+  color: white;
+  font-size: 12px;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-weight: bold;
+}

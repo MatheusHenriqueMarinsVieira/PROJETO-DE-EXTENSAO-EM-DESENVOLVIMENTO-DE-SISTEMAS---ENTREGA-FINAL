@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tim Maia – 1970 | Vinil Express</title>
+  <link rel="stylesheet" href="style-descricao.css">
+</head>
+<body class="descricao-page">
+
+  <script>
+    // Atualiza o contador no topo
+    document.addEventListener("DOMContentLoaded", () => {
+      const idUsuario = localStorage.getItem("usuarioId");
+      const contador = document.getElementById("favoritos-count");
+
+      if (!idUsuario) {
+        contador.textContent = "0";
+        return;
+      }
+
+      fetch(`http://localhost:3000/favoritos/${idUsuario}`)
+        .then(r => r.json())
+        .then(dados => {
+          contador.textContent = dados.length;
+        })
+        .catch(() => contador.textContent = "0");
+    });
+  </script>
+
+  <header>
+    <div class="logo">
+      <img src="imagens/mascote1.png" alt="Vinil Express">
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li> |
+        <li><a href="sobre.html">Sobre Nós</a></li> |
+        <li><a href="discos.html">Discos</a></li> |
+        <li><a href="contato.html">Contato</a></li> |
+      </ul>
+    </nav>
+
+    <div class="login-links">
+      <a href="cadastro.html">Cadastre-se</a> | 
+      <a href="login.html">Fazer Login</a>
+
+      <a href="favoritos.html" class="favoritos-link">
+        ❤️ <span id="favoritos-count">0</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="descricao-container">
+      <div class="descricao-content">
+
+        <div class="descricao-imagem">
+          <img src="imagens/imagem11.png" alt="Tim Maia 1970">
+          <img src="imagens/imagem14.png" class="vinil" alt="Vinil">
+        </div>
+
+        <div class="descricao-texto">
+          <h1>Tim Maia – 1970</h1>
+
+          <p>
+            Esse álbum é considerado o início da carreira de sucesso de Tim Maia.  
+            Com um som vibrante e original, mistura elementos de soul, funk e música brasileira de forma única.
+          </p>
+
+          <h3>Principais músicas:</h3>
+          <ol>
+            <li>“Azul da Cor do Mar”</li>
+            <li>“Coroné Antônio Bento”</li>
+            <li>“Cristina”</li>
+          </ol>
+
+          <button class="favoritar" onclick="favoritarDisco()">
+            ❤️ Favoritar
+          </button>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <nav class="footer-nav">
+      <a href="index.html">Home</a> | 
+      <a href="sobre.html">Sobre Nós</a> |
+      <a href="discos.html">Discos</a> |
+      <a href="contato.html">Contato</a> |
+    </nav>
+
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="imagens/logo1.png" alt="Logo Vinil Express">
+        <p>Vinil Express</p>
+      </div>
+
+      <div class="footer-social">
+        <img src="imagens/mascote1.png" alt="Mascote Vinil">
+      </div>
+    </div>
+
+    <p class="footer-copy">©2025 Todos os direitos reservados</p>
+  </footer>
+
+  <!-- SCRIPT DO FAVORITAR -->
+  <script>
+    function favoritarDisco() {
+      const idUsuario = localStorage.getItem("usuarioId");
+
+      if (!idUsuario) {
+        alert("Você precisa fazer login para favoritar discos!");
+        window.location.href = "login.html";
+        return;
+      }
+
+      const dados = {
+        idUsuario,
+        nomeDisco: "Tim Maia – 1970",
+        artista: "Tim Maia",
+        ano: 1970,
+        capa: "imagens/imagem11.png"
+      };
+
+      fetch("http://localhost:3000/favoritos", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(dados)
+      })
+      .then(r => r.json())
+      .then(resposta => {
+        alert("Disco salvo nos favoritos!");
+        
+        // Atualiza contador
+        fetch(`http://localhost:3000/favoritos/${idUsuario}`)
+          .then(r => r.json())
+          .then(lista => {
+            document.getElementById("favoritos-count").textContent = lista.length;
+          });
+      })
+      .catch(() => alert("Erro ao favoritar."));
+    }
+  </script>
+
+</body>
+</html>
