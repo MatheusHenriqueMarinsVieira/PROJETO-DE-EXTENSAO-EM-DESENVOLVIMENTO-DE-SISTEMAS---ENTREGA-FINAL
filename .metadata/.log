@@ -1,0 +1,127 @@
+!SESSION 2025-11-08 22:14:09.921 -----------------------------------------------
+eclipse.buildId=4.37.0.20250905-1455
+java.version=21.0.8
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=pt_BR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY ch.qos.logback.classic 1 0 2025-11-08 22:14:36.368
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY org.eclipse.lemminx.uber-jar 4 0 2025-11-08 22:14:38.708
+!MESSAGE bundle org.eclipse.lemminx.uber-jar:0.31.0 (612) Component descriptor entry 'OSGI-INF/*.xml' not found
+
+!ENTRY ch.qos.logback.classic 1 0 2025-11-08 22:15:11.917
+!MESSAGE Logback config file: /home/santos/Projeto (2)/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.7.100.20250418-1315.xml
+
+!ENTRY org.eclipse.equinox.p2.director 2 10054 2025-11-08 22:19:42.296
+!MESSAGE Cannot complete the install because of a conflicting dependency.
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 0 2025-11-08 22:19:42.296
+!MESSAGE Software being installed: artificial_root 1.0.0.v1762651086649
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2025-11-08 22:19:42.296
+!MESSAGE Only one of the following can be installed at once: 
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2025-11-08 22:19:42.297
+!MESSAGE Common EPP Bundle 4.38.0.20251030-0645 (org.eclipse.epp.package.common 4.38.0.20251030-0645)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2025-11-08 22:19:42.297
+!MESSAGE Common EPP Bundle 4.37.0.20250905-1455 (org.eclipse.epp.package.common 4.37.0.20250905-1455)
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2025-11-08 22:19:42.297
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2025-11-08 22:19:42.297
+!MESSAGE From: artificial_root 1.0.0.v1762651086649
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2025-11-08 22:19:42.297
+!MESSAGE To: org.eclipse.equinox.p2.iu; epp.package.jee [4.37.0,4.38.0)
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2025-11-08 22:19:42.298
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2025-11-08 22:19:42.298
+!MESSAGE From: artificial_root 1.0.0.v1762651086649
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2025-11-08 22:19:42.298
+!MESSAGE To: org.eclipse.equinox.p2.iu; org.eclipse.epp.package.common [4.38.0,5.0.0)
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2025-11-08 22:19:42.298
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2025-11-08 22:19:42.298
+!MESSAGE From: Eclipse IDE for Enterprise Java and Web Developers 4.37.0.20250905-1455 (epp.package.jee 4.37.0.20250905-1455)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2025-11-08 22:19:42.298
+!MESSAGE To: org.eclipse.equinox.p2.iu; org.eclipse.epp.package.common.feature.feature.group [4.37.0.20250905-1455,4.37.0.20250905-1455]
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2025-11-08 22:19:42.299
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2025-11-08 22:19:42.299
+!MESSAGE From: Eclipse Packaging Project Common Feature 4.37.0.20250905-1455 (org.eclipse.epp.package.common.feature.feature.group 4.37.0.20250905-1455)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2025-11-08 22:19:42.299
+!MESSAGE To: org.eclipse.equinox.p2.iu; org.eclipse.epp.package.common [4.37.0.20250905-1455,4.37.0.20250905-1455]
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2025-11-08 22:46:07.631
+!MESSAGE Connection to https://www.caucho.com/eclipse/site.xml failed on www.caucho.com: Nome ou serviço desconhecido. Retry attempt 0 started
+!STACK 0
+java.net.UnknownHostException: www.caucho.com: Nome ou serviço desconhecido
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Inet6AddressImpl.java:52)
+	at java.base/java.net.InetAddress$PlatformResolver.lookupByName(InetAddress.java:1211)
+	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1828)
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:1139)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688)
+	at org.apache.hc.client5.http.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:61)
+	at org.apache.hc.client5.http.DnsResolver.resolve(DnsResolver.java:77)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:172)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:490)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:144)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:150)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:106)
+	at org.eclipse.ecf.provider.filetransfer.httpclient5.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1009)
+	at org.eclipse.ecf.provider.filetransfer.httpclient5.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:997)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:76)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2025-11-08 22:46:07.916
+!MESSAGE Connection to https://www.caucho.com/eclipse/p2.index failed on www.caucho.com. Retry attempt 0 started
+!STACK 0
+java.net.UnknownHostException: www.caucho.com
+	at java.base/java.net.InetAddress$CachedLookup.get(InetAddress.java:988)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688)
+	at org.apache.hc.client5.http.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:61)
+	at org.apache.hc.client5.http.DnsResolver.resolve(DnsResolver.java:77)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:172)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:490)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:164)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:174)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:144)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:150)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:113)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:106)
+	at org.eclipse.ecf.provider.filetransfer.httpclient5.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1009)
+	at org.eclipse.ecf.provider.filetransfer.httpclient5.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:997)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:76)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.equinox.p2.artifact.repository 2 0 2025-11-08 22:55:13.821
+!MESSAGE No digest algorithm is available to verify download of osgi.bundle,com.abapblog.helpdesklink.releasenotes,1.0.1.202507311203 from repository https://fidley.github.io/HelpdeskLinks/.
+
+!ENTRY org.eclipse.equinox.p2.artifact.repository 2 0 2025-11-08 22:55:13.824
+!MESSAGE No digest algorithm is available to verify download of osgi.bundle,com.abapblog.helpdesklink,1.0.1.202507311203 from repository https://fidley.github.io/HelpdeskLinks/.
+
+!ENTRY org.eclipse.equinox.p2.artifact.repository 2 0 2025-11-08 22:55:13.825
+!MESSAGE No digest algorithm is available to verify download of osgi.bundle,com.abapblog.branding,0.0.1.202507311203 from repository https://fidley.github.io/HelpdeskLinks/.
+
+!ENTRY org.eclipse.equinox.p2.artifact.repository 2 0 2025-11-08 22:55:13.837
+!MESSAGE No digest algorithm is available to verify download of org.eclipse.update.feature,com.abapblog.heldesklink.feature,1.0.1.202507311203 from repository https://fidley.github.io/HelpdeskLinks/.
