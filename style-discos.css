@@ -1,0 +1,255 @@
+/* --- Estilo Geral --- */
+html, body {
+  margin: 0;
+  font-family:Arial, Helvetica, sans-serif;
+  background-color: #f8f0e0;
+  color: #3b2a1a;
+
+}
+
+/* --- Cabeçalho --- */
+header {
+  background-color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  font-size: 23px;
+}
+
+header .logo img {
+  height: 70px;
+
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  padding: 0;
+  font-size: 23px;
+  color: white;
+}
+
+header nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+  font-size: 23px;
+}
+
+header nav a:hover {
+  color: #FF5B00;
+  text-decoration: none;
+}
+
+header .login-links {
+  font-weight: 600;
+  color: #FFB347;
+}
+
+header .login-links a {
+  color: #FFB347;
+  text-decoration: none;
+}
+
+header .login-links a:hover {
+  color: #FF5B00;
+  text-decoration: none;
+}
+
+
+header .heart {
+  margin-left: 10px;
+}
+.logo {
+  font-size: 1.6em;
+  font-weight: bold;
+  color: orange;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+nav a.active {
+  color: orange;
+}
+nav a:hover {
+  color: orange;
+}
+.auth a {
+  color: #fff;
+  text-decoration: none;
+}
+.auth a:hover {
+  color: orange;
+}
+
+/* --- Conteúdo principal (discos) --- */
+.discos-container {
+  text-align: center;
+  padding: 40px 20px;
+}
+.discos-container h1 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: #3b2a1a;
+}
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.album-card {
+  background-color: #fffaf0;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease;
+}
+.album-card:hover {
+  transform: scale(1.03);
+}
+.album-card img {
+  width: 100%;
+  border-radius: 6px;
+}
+.album-card p {
+  margin: 10px 0;
+  font-weight: bold;
+}
+.album-card button {
+  background-color: orange;
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.album-card button:hover {
+  background-color: #ff7b00;
+}
+
+/* --- Rodapé --- */
+footer {
+  background-color: #000;
+  position: relative;
+  top: 180px;
+  text-align: center;
+  border-top: 2px solid #191919;
+}
+
+footer .footer-nav {
+  margin-bottom: 20px;
+  position: relative;
+  top: 150px;
+  font-size: 30px;
+  color: white;
+}
+
+footer nav a:hover {
+  color: #FF5B00;
+  text-decoration: none;
+}
+
+footer .footer-nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 8px;
+  font-weight: 600;
+  position: relative;
+  font-size: 30px;
+}
+
+footer .footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.footer-logo p {
+  color: #FFB347;
+  font-weight: 700;
+  margin-top: 8px;
+  position: relative;
+  top: -240px;
+  left: -300px;
+}
+
+.footer-social p {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.footer-content img {
+  width: 240px;
+  margin: 0 5px;
+  position: relative;
+  left: -300px;
+  top: 20px;
+}
+
+.footer-social img {
+  width: 240px;
+  position: relative;
+  left: 300px;
+  top: -20px;
+}
+
+.footer-copy {
+  font-size: 0.8rem;
+  color: #aaa;
+  margin-top: 20px;
+  position: relative;
+
+}
+
+.auth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.auth a {
+  color: #ff7b00;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.auth a:hover {
+  color: #ff6200;
+}
+
+.favoritos-link {
+  position: relative;
+  font-size: 20px;
+}
+
+#favoritos-count {
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  background-color: #ff7b00;
+  color: white;
+  font-size: 12px;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-weight: bold;
+}
+
+

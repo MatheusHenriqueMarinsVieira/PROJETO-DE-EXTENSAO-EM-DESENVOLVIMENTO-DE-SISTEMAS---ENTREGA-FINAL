@@ -1,0 +1,8 @@
+CREATE TABLE login_logs (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario_id INT NOT NULL,
+    data_login TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    ip VARCHAR(50),
+    
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
+);

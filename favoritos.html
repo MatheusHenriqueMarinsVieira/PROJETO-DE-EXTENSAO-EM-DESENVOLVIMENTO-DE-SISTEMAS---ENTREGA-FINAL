@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meus Favoritos - Vinil Express</title>
+  <link rel="stylesheet" href="style-favoritos.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="imagens/mascote1.png" alt="Vinil Express">
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li> |
+        <li><a href="sobre.html">Sobre Nós</a></li> |
+        <li><a href="discos.html">Discos</a></li> |
+        <li><a href="contato.html">Contato</a></li> |
+      </ul>
+    </nav>
+
+    <div class="login-links">
+      <a href="cadastro.html">Cadastre-se</a> | 
+      <a href="login.html">Fazer Login</a>
+
+      <a href="favoritos.html" class="favoritos-link">
+        ❤️ <span id="favoritos-count">0</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ===================================== -->
+  <!-- CONTEÚDO PRINCIPAL PARA MOSTRAR FAVORITOS -->
+  <!-- ===================================== -->
+  <main>
+      <h1 class="titulo-favoritos">Meus Favoritos</h1>
+
+      <!-- LISTA ONDE O JS IRÁ INSERIR OS FAVORITOS -->
+      <div id="favoritos-lista" class="favoritos-grid" style="display:flex; gap:20px; flex-wrap:wrap;">
+      </div>
+  </main>
+
+  <footer>
+    <nav class="footer-nav">
+      <a href="index.html">Home</a> | 
+      <a href="sobre.html">Sobre Nós</a> |
+      <a href="discos.html">Discos</a> |
+      <a href="contato.html">Contato</a> |
+    </nav>
+
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="imagens/logo1.png" alt="Logo Vinil Express">
+        <p>Vinil Express</p>
+      </div>
+
+      <div class="footer-social">
+        <img src="imagens/mascote1.png" alt="Mascote Vinil" class="mascote">
+      </div>
+    </div>
+
+    <p class="footer-copy">©2025 Todos os direitos reservados</p>
+  </footer>
+
+  <script src="favoritos.js"></script>
+</body>
+</html>

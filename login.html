@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinil Express - Login</title>
+    <link rel="stylesheet" href="style-login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="image-section"></div>
+
+        <div class="login-section">
+            <nav>
+                <ul>
+                    <li><a href="index.html">HOME</a></li> |
+                    <li><a href="sobre.html">SOBRE NÓS</a></li> |
+                    <li><a href="discos.html">DISCOS</a></li> |
+                    <li><a href="contato.html">CONTATO</a></li> |
+                </ul>
+            </nav>
+
+            <h1>VINIL EXPRESS</h1>
+            <h2>EFETUE O SEU LOGIN</h2>
+
+            <!-- ESTE É O FORMULÁRIO QUE VAI FUNCIONAR -->
+            <form id="formLogin" class="login-form">
+                <div class="input-group">
+                    <input type="email" id="email" placeholder="E-mail:" required>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" id="senha" placeholder="Senha:" required>
+                </div>
+
+                <button type="submit" class="btn-login">LOGIN</button>
+            </form>
+
+            <a href="cadastro.html" class="cadastre">Cadastre-se</a>
+        </div>
+    </div>
+
+<!-- SCRIPT CORRETO DO LOGIN -->
+<script>
+document.getElementById("formLogin").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const data = {
+        email: document.getElementById("email").value,
+        senha: document.getElementById("senha").value
+    };
+
+    const res = await fetch("http://localhost:3000/login", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(data)
+    });
+
+    const json = await res.json();
+
+    if (res.ok) {
+        // Salvar dados do usuário
+        localStorage.setItem("usuarioId", json.usuario.id);
+        localStorage.setItem("usuarioNome", json.usuario.nome);
+
+        alert("Login realizado com sucesso!");
+
+        // Redirecionar para a página principal
+        window.location.href = "index.html";
+    } else {
+        alert("Erro: " + (json.erro || JSON.stringify(json)));
+    }
+});
+</script>
+
+</body>
+</html>

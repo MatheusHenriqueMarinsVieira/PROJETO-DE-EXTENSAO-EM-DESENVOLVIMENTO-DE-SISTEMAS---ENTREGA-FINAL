@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tim Maia – O Descobridor dos Sete Mares | Vinil Express</title>
+  <link rel="stylesheet" href="style-descricao.css">
+</head>
+<body class="descricao-page">
+  <header>
+        <div class="logo">
+        <img src="imagens/mascote1.png" alt="Vinil Express">
+        </div>
+
+        <nav>
+        <ul>
+         <li><a href="index.html">Home</a></li> |
+         <li><a href="sobre.html">Sobre Nós</a></li> |
+         <li><a href="discos.html">Discos</a></li> |
+         <li><a href="contato.html">Contato</a></li> |
+        </ul>
+        </nav>
+
+        <div class="login-links">
+        <a href="cadastro.html">Cadastre-se</a> | <a href="login.html">Fazer Login</a>
+        <a href="favoritos.html" class="favoritos-link">
+      ❤️ <span id="favoritos-count">0</span>
+      </a>
+        </div>
+    </header>
+
+  <main>
+    <section class="descricao-container">
+      <div class="descricao-content">
+        <div class="descricao-imagem">
+          <img src="imagens/imagem9.png" alt="O Descobridor dos Sete Mares">
+          <img src="imagens/imagem14.png" class="vinil" alt="Vinil">
+        </div>
+        <div class="descricao-texto">
+          <h1>Tim Maia – O Descobridor dos Sete Mares</h1>
+          <p>
+            Um dos maiores sucessos de Tim Maia, esse disco traz a icônica faixa-título que se tornou um clássico da música brasileira.
+            Com arranjos marcantes e voz poderosa, o álbum é um retrato da genialidade do cantor.
+          </p>
+          <h3>Principais músicas:</h3>
+          <ol>
+            <li>“O Descobridor dos Sete Mares”</li>
+            <li>“Do Leme ao Pontal”</li>
+            <li>“Telefone”</li>
+          </ol>
+
+          <!-- 🔥 BOTÃO FAVORITAR COM NOVO SISTEMA -->
+          <!-- ALTERE O NÚMERO DO DISCO_ID AQUI ⬇️⬇️⬇️-->
+          <button class="favoritar" onclick="favoritarDisco(1)">❤️ Favoritar</button>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <nav class="footer-nav">
+      <a href="index.html">Home</a> | 
+      <a href="sobre.html">Sobre Nós</a> |
+      <a href="discos.html">Discos</a> |
+      <a href="contato.html">Contato</a> |
+    </nav>
+
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="imagens/logo1.png" alt="Logo Vinil Express">
+        <p>Vinil Express</p>
+      </div>
+
+      <div class="footer-social">
+        <img src="imagens/mascote1.png" alt="Mascote Vinil" class="mascote">
+      </div>
+    </div>
+
+    <p class="footer-copy">©2025 Todos os direitos reservados</p>
+  </footer>
+
+  <!-- ===================================== -->
+  <!-- SCRIPT FAVORITAR COM O NOVO SISTEMA -->
+  <!-- ===================================== -->
+  <script>
+    async function favoritarDisco(discoId) {
+        const usuarioId = localStorage.getItem("usuarioId");
+
+        if (!usuarioId) {
+            alert("Você precisa fazer login para favoritar!");
+            window.location.href = "login.html";
+            return;
+        }
+
+        const data = {
+            usuario_id: usuarioId,
+            disco_id: discoId
+        };
+
+        const res = await fetch("http://localhost:3000/favoritos", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+        });
+
+        const json = await res.json();
+
+        if (res.status === 409) {
+            alert("Este disco já está nos favoritos!");
+        } else if (res.ok) {
+            alert("Disco adicionado aos favoritos!");
+        } else {
+            alert("Erro ao favoritar: " + json.erro);
+        }
+    }
+  </script>
+
+</body>
+</html>
